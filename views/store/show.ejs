@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= store.name %> </title>
+</head>
+<body>
+    <h1> <%= store.name %> </h1>
+    <ul>
+        <li>City: <%= store.city %> </li>
+        <li>Email: <%= store.email %> </li>
+    </ul>
+    <h2>Products</h2>
+    <ul>
+        <% for(let product of store.products) { %> 
+            <li><a href="/products/<%= product._id %> "><%= product.name %></a> </li>
+            <% } %> 
+    </ul>
+    <a href="/stores/<%= store._id %>/products/new">Add product</a>
+    <a href="/stores">All Stores</a>
+    <form action="/stores/<%= store._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Stores</title>
+</head>
+
+<body>
+    <h1>All Stores</h1>
+    <ul>
+        <% for(let store of stores){ %>
+            <li><a href="/stores/<%= store._id %> "><%= store.name %></a></li>
+            <% } %>
+    </ul>
+    <a href="/stores/new">Add Store</a>
+</body>
+
+</html>
